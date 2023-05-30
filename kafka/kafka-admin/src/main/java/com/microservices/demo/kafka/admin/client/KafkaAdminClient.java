@@ -3,7 +3,6 @@ package com.microservices.demo.kafka.admin.client;
 import com.microservices.demo.config.KafkaConfigData;
 import com.microservices.demo.config.RetryConfigData;
 import com.microservices.demo.kafka.admin.exception.KafkaClientException;
-
 import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.CreateTopicsResult;
 import org.apache.kafka.clients.admin.NewTopic;
@@ -38,10 +37,12 @@ public class KafkaAdminClient {
 
     private final WebClient webClient;
 
+
     public KafkaAdminClient(KafkaConfigData config,
                             RetryConfigData retryConfigData,
                             AdminClient client,
-                            RetryTemplate template, WebClient webClient) {
+                            RetryTemplate template,
+                            WebClient webClient) {
         this.kafkaConfigData = config;
         this.retryConfigData = retryConfigData;
         this.adminClient = client;
